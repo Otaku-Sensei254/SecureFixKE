@@ -29,7 +29,18 @@ export default function Footer() {
               <li><FooterLink href="/solutions/phishnet-recon">PhishNet Recon</FooterLink></li>
               <li><FooterLink href="/solutions/shinobi">Shinobi</FooterLink></li>
               <li><FooterLink href="/solutions/hakii">HAKII</FooterLink></li>
-              <li><FooterLink href="/solutions/infrastructure-monitoring">Infrastructure Monitoring</FooterLink></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-primary mb-4">Services</h4>
+            <ul className="space-y-2.5">
+              <li><FooterLink href="/services/managed-endpoint-protection">Endpoint Protection</FooterLink></li>
+              <li><FooterLink href="/services/phishing-protection">Phishing Protection</FooterLink></li>
+              <li><FooterLink href="/services/breach-leak-monitoring">Breach Leak Monitoring</FooterLink></li>
+              <li><FooterLink href="/services/infrastructure-monitoring">Infrastructure Monitoring</FooterLink></li>
+              <li><FooterLink href="/services/email-security">Email Security</FooterLink></li>
+              <li><FooterLink href="/services/cloud-firewall-management">Cloud Firewall</FooterLink></li>
+              <li><FooterLink href="/services/security-awareness-training">Security Training</FooterLink></li>
             </ul>
           </div>
           <div>
@@ -46,7 +57,7 @@ export default function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-wider text-primary mb-4">Company</h4>
             <ul className="space-y-2.5">
               <li><FooterLink href="/why-securefix">Why SecureFix</FooterLink></li>
-              <li><FooterLink href="/services">Services</FooterLink></li>
+              <li><FooterLink href="/services">All Services</FooterLink></li>
               <li><FooterLink href="/pricing">Pricing</FooterLink></li>
               <li><FooterLink href="/contact">Contact Us</FooterLink></li>
               <li><FooterLink href="/legal/trial-agreement">Trial Agreement</FooterLink></li>

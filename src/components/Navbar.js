@@ -9,7 +9,16 @@ const solutions = [
   { name: "Shinobi", href: "/solutions/shinobi", desc: "Penetration testing framework" },
   { name: "HAKII", href: "/solutions/hakii", desc: "Mobile security platform" },
   { name: "Pentest Tools", href: "/solutions/pentest", desc: "Security assessment suite" },
-  { name: "Infrastructure Monitoring", href: "/solutions/infrastructure-monitoring", desc: "Prometheus & Grafana observability" },
+];
+
+const services = [
+  { name: "Managed Endpoint Protection", href: "/services/managed-endpoint-protection", desc: "Endpoint detection & response" },
+  { name: "Phishing Protection", href: "/services/phishing-protection", desc: "Anti-phishing & threat intelligence" },
+  { name: "Breach Leak Monitoring", href: "/services/breach-leak-monitoring", desc: "Credential & data leak surveillance" },
+  { name: "Infrastructure Monitoring", href: "/services/infrastructure-monitoring", desc: "Prometheus & Grafana observability" },
+  { name: "Email Security", href: "/services/email-security", desc: "Secure email gateway & filtering" },
+  { name: "Cloud Firewall Management", href: "/services/cloud-firewall-management", desc: "WAF & network perimeter defense" },
+  { name: "Security Awareness Training", href: "/services/security-awareness-training", desc: "Staff training & phishing simulations" },
 ];
 
 const resources = [
@@ -53,7 +62,26 @@ export default function Navbar() {
             </div>
           </Dropdown>
 
-          <NavLink href="/services">Services</NavLink>
+          <Dropdown
+            label="Services"
+            open={open === "services"}
+            onToggle={() => setOpen(open === "services" ? null : "services")}
+            onClose={() => setOpen(null)}
+          >
+            <div className="p-3 w-72 space-y-1">
+              {services.map((s) => (
+                <Link
+                  key={s.href}
+                  href={s.href}
+                  className="block rounded-lg px-3 py-2.5 hover:bg-surface transition-colors"
+                  onClick={() => setOpen(null)}
+                >
+                  <div className="font-medium text-sm text-primary hover:text-accent transition-colors">{s.name}</div>
+                  <div className="text-xs text-muted mt-0.5">{s.desc}</div>
+                </Link>
+              ))}
+            </div>
+          </Dropdown>
 
           <Dropdown
             label="Resources"
@@ -111,7 +139,12 @@ export default function Navbar() {
                 <Link key={s.href} href={s.href} className="block py-2 text-sm text-primary hover:text-accent" onClick={() => setMobileOpen(false)}>{s.name}</Link>
               ))}
             </div>
-            <NavMobileLink href="/services" label="Services" />
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-muted mb-2">Services</div>
+              {services.map((s) => (
+                <Link key={s.href} href={s.href} className="block py-2 text-sm text-primary hover:text-accent" onClick={() => setMobileOpen(false)}>{s.name}</Link>
+              ))}
+            </div>
             <div>
               <div className="text-xs font-semibold uppercase tracking-wider text-muted mb-2">Resources</div>
               {resources.map((r) => (
